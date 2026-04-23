@@ -143,6 +143,8 @@ export default function Analyzer() {
         {loading && (
           <p className="text-center text-slate-500 text-sm mt-4 animate-pulse">
             Extracting resume text → Running AI analysis → Building your report...
+            <br />
+            <span className="text-xs text-slate-600 mt-1 block">First request may take ~30 seconds to wake up the server.</span>
           </p>
         )}
       </div>

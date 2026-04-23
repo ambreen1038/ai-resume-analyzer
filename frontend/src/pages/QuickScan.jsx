@@ -140,12 +140,15 @@ export default function QuickScan() {
           className="w-full py-5 rounded-2xl gradient-bg text-white font-bold text-lg hover:opacity-90 transition-all hover:-translate-y-1 shadow-lg shadow-indigo-500/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 mb-12"
         >
           {loading ? (
-            <span className="flex items-center justify-center gap-3">
-              <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
-              </svg>
-              Scanning resume...
+            <span className="flex flex-col items-center justify-center gap-2">
+              <span className="flex items-center gap-3">
+                <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                </svg>
+                Scanning resume...
+              </span>
+              <span className="text-xs opacity-60">First request may take ~30 seconds to wake up the server.</span>
             </span>
           ) : '🔍 Scan My Resume'}
         </button>
