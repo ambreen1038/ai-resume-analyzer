@@ -66,7 +66,7 @@ export default function QuickScan() {
     try {
       const form = new FormData()
       form.append('resume', file)
-      const { data } = await axios.post('http://localhost:8000/detect-role', form, {
+      const { data } = await axios.post('https://ai-resume-analyzer-3ua9.onrender.com/detect-role', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       setResult(data)

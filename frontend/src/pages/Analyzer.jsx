@@ -31,7 +31,7 @@ export default function Analyzer() {
       form.append('resume', file)
       form.append('job_description', jobDesc)
 
-      const { data } = await axios.post('http://localhost:8000/analyze', form, {
+      const { data } = await axios.post('https://ai-resume-analyzer-3ua9.onrender.com/analyze', form, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
 
