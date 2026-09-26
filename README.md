@@ -1,5 +1,7 @@
 # AI Resume Analyzer
 
+[![CI](https://github.com/ambreen1038/ai-resume-analyzer/actions/workflows/ci.yml/badge.svg)](https://github.com/ambreen1038/ai-resume-analyzer/actions/workflows/ci.yml)
+
 Upload a resume (PDF) and get an AI analysis: a match score against a job description, skill-gap detection, an ATS score and bullet-point rewrite suggestions. A **Quick Scan** mode detects your likely role and seniority without a job description.
 
 **Live demo:** https://ai-resume-analyzer-ecru-gamma.vercel.app
@@ -59,6 +61,18 @@ npm run dev
 
 The frontend currently calls the hosted API. To use your local backend, change the two request URLs in `frontend/src/pages/Analyzer.jsx` and `QuickScan.jsx` to `http://localhost:8000`.
 
+## Tests
+
+The backend has automated tests (pytest) that cover input validation, the happy paths for both endpoints, code-fenced model output, invalid JSON from the model and model failures. The PDF parser and the Groq client are mocked, so the tests run offline and need no API key.
+
+```bash
+cd backend
+pip install -r requirements-dev.txt
+pytest
+```
+
+GitHub Actions runs the backend tests and a frontend production build on every push and pull request.
+
 ## Limitations
 
 - PDF files only; scanned (image-only) PDFs won't extract text.
@@ -70,5 +84,5 @@ The frontend currently calls the hosted API. To use your local backend, change t
 ## Ideas for next steps
 
 - Move the API URL to an environment variable (`VITE_API_URL`).
-- Add automated tests for both endpoints and a CI workflow.
 - Add rate limiting and stricter CORS.
+- Add frontend tests.
